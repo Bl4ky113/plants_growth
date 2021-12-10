@@ -1,0 +1,37 @@
+/* Variables */
+
+:root {
+  --base_green: #59a725;
+  --light_green: #7ead1d;
+  --light_warm_green: #a8bb5c;
+  --light_cold_green: #7eaf4f;
+  --dark_green: #196115;
+  --dark_brown: #37332c;
+  --white: #e9e9e9;
+  --light_black: #444;
+  --black: #000;
+
+  --font_white: #fff;
+  --font_black: #000;
+}
+
+$base_green: var(--base_green);
+$light_green: var(--light_green);
+$light_warm_green: var(--light_warm_green);
+$light_cold_green: var(--light_cold_green);
+$dark_green: var(--dark_green);
+$dark_brown: var(--dark_brown);
+$white: var(--white);
+$light_black: var(--light_black);
+$black: var(--black);
+
+$font_white: var(--font_white);
+$font_black: var(--font_black);
+
+/* 
+  Fonts, so you dont have to search for them in the css link. Hernández.
+
+  Open Sans: 400, 500, 600, 800. Sans serif
+  Open Sans Condensed: 300, 300 italic, 700. Sans-serif 
+  Anonymous Pro: 400, 700. Monospace
+*/
