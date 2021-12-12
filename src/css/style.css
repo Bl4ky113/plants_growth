@@ -57,6 +57,56 @@
   text-transform: capitalize;
 }
 
+.main {
+  grid-area: main;
+}
+.main .section {
+  width: 95%;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+}
+.main .section--text .title {
+  color: var(--dark_green);
+  font: 700 1.25rem/125% "Open Sans Condensed", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 0 1px 5px -2px var(--light_green);
+}
+.main .section--text .subtitle {
+  color: var(--dark_green);
+  font: 600 1.15rem/110% "Open Sans", sans-serif;
+  text-transform: capitalize;
+}
+.main .section--text .text {
+  color: var(--font_black);
+  font: 400 1rem/105% "Open Sans", sans-serif;
+}
+.main .section--text .list {
+  padding-left: 0.25rem;
+  list-style: none;
+  box-shadow: inset 2px 0 5px -3px var(--light_green);
+}
+.main .section--text .list .li {
+  color: var(--font_black);
+  font: 400 1rem/105% "Open Sans", sans-serif;
+}
+.main .section--text .list .li::before {
+  padding-right: 0.25rem;
+  content: "&rarr;";
+  content: "";
+  color: var(--light_cold_green);
+  font: 500 0.75em/100% "FontAwesome";
+}
+.main .section--text .link {
+  color: var(--font_black);
+  font: 500 1rem/105% "Open Sans", sans-serif;
+  text-decoration: underline solid var(--dark_green);
+  transition: color 450ms ease;
+}
+.main .section--text .link:hover, .main .section--text .link:active, .main .section--text .link:target {
+  color: var(--base_green);
+}
+
 .footer {
   grid-area: footer;
   background-color: var(--dark_brown);
