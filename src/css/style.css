@@ -7,6 +7,8 @@
   --light_warm_green: #a8bb5c;
   --light_cold_green: #7eaf4f;
   --dark_green: #196115;
+  --light_brown: hsl(38, 40%, 50%);
+  --base_brown: hsl(38, 40%, 40%);
   --dark_brown: #37332c;
   --white: #e9e9e9;
   --light_black: #444;
@@ -107,12 +109,14 @@
   text-decoration: underline solid var(--dark_green);
   transition: color 450ms ease;
 }
-.main .section--text .link:hover, .main .section--text .link:active, .main .section--text .link:target {
+.main .section--text .link:hover, .main .section--text .link:active, .main .section--text .link:target, .main .section--text .link:focus {
   color: var(--base_green);
 }
 .main .section--plantfamilies {
   padding: 0;
   display: flex;
+  align-items: center;
+  flex-flow: row wrap;
 }
 .main .section--plantfamilies .plant {
   padding: 0.75rem;
@@ -122,6 +126,7 @@
 }
 .main .section--plantfamilies .plant .plant__title {
   border-bottom: 3px solid var(--base_green);
+  border-radius: 0.25rem;
   margin: 0.5rem 0;
   color: var(--font_black);
   font: 700 1.75rem/110% "Open Sans Condensed", sans-serif;
@@ -149,6 +154,46 @@
 }
 
 .footer {
+  padding: 1rem 0.25rem;
   grid-area: footer;
   background-color: var(--dark_brown);
+  display: grid;
+  grid-template: repeat(3, auto)/1fr;
+  gap: 0.5rem;
+}
+.footer .section-footer {
+  padding: 0.5rem 0.25rem;
+  border-top: 2px solid var(--base_brown);
+  border-bottom: 2px solid var(--base_brown);
+}
+.footer .footer__title {
+  color: var(--font_white);
+  font: 700 1.5rem/110% "Open Sans Condensed", sans-serif;
+  text-transform: capitalize;
+}
+.footer .list {
+  border-left: 2px solid var(--base_brown);
+  padding-left: 0.5rem;
+  list-style: none;
+}
+.footer .list .list__obj {
+  color: var(--font_white);
+  font: 500 1rem/115% "Open Sans", sans-serif;
+}
+.footer .list .list__obj::before {
+  padding-right: 0.5rem;
+  content: "";
+  color: var(--base_brown);
+  font: 500 1rem/115% "FontAwesome";
+}
+.footer .list .list__link {
+  outline: none;
+  color: var(--base_brown);
+  font: 600 1rem/115% "Open Sans", sans-serif;
+  text-decoration: none;
+  transition: color 450ms ease, text-decoration 450ms ease;
+}
+.footer .list .list__link:hover, .footer .list .list__link:active, .footer .list .list__link:target, .footer .list .list__link:focus {
+  color: var(--light_brown);
+  text-decoration: underline solid var(--light_brown) 2px;
 }

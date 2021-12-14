@@ -111,7 +111,8 @@
 
       &:hover,
       &:active,
-      &:target {
+      &:target,
+      &:focus {
         color: $base_green;
       }
     }
@@ -121,6 +122,8 @@
     padding: 0;
 
     display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 
     .plant {
       padding: 0.75rem;
@@ -130,6 +133,7 @@
 
       .plant__title {
         border-bottom: 3px solid $base_green;
+        border-radius: 0.25rem;
         margin: 0.5rem 0;
 
         color: $font_black;
@@ -169,7 +173,63 @@
 }
 
 .footer {
+  padding: 1rem 0.25rem;
+
   grid-area: footer;
 
   background-color: $dark_brown;
+
+  display: grid;
+  grid-template: repeat(3, auto) / 1fr;
+  gap: 0.5rem;
+
+  .section-footer {
+    padding: 0.5rem 0.25rem;
+    border-top: 2px solid $base_brown;
+    border-bottom: 2px solid $base_brown;
+  }
+
+  .footer__title {
+    color: $font_white;
+    font: 700 1.5rem/110% "Open Sans Condensed", sans-serif;
+    text-transform: capitalize;
+  }
+
+  .list {
+    border-left: 2px solid $base_brown;
+    padding-left: 0.5rem;
+
+    list-style: none;
+
+    .list__obj {
+      color: $font_white;
+      font: 500 1rem/115% "Open Sans", sans-serif;
+
+      &::before {
+        padding-right: 0.5rem;
+
+        content: "\f101";
+        color: $base_brown;
+        font: 500 1rem/115% "FontAwesome";
+      }
+    }
+
+    .list__link {
+      outline: none;
+
+      color: $base_brown;
+      font: 600 1rem/115% "Open Sans", sans-serif;
+      text-decoration: none;
+
+      transition: color 450ms ease, text-decoration 450ms ease;
+
+      &:hover, 
+      &:active,
+      &:target,
+      &:focus {
+        color: $light_brown;
+        text-decoration: underline solid $light_brown 2px;
+      }
+    }
+  }
 }
