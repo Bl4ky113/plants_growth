@@ -29,11 +29,10 @@
     <p class="header__text">//Made By Bl4ky113</p>
   </header>
   <main class="main">
-    <section class="section section--popup"></section>
     <section class="section section--text">
       <p class="title">Want To Know The Growth of your Plants?</p>
       <p class="text">
-        If your plants are from one of these families:
+        If any of your plants are from one of these families:
       </p>
       <section class="section section--plantfamilies">
         <article class="plant">
@@ -66,8 +65,43 @@
         You can calculate their growth by filling this little formulary.
       </p>
     </section>
-    <section class="section section--formulary">
-
+    <section class="section section--form">
+      <p class="title">First. How Hany plants do you have?</p>
+      <div class="form-wrapper">
+        <div class="input-wrapper">
+          <label for="input_number_cactaceae" class="label">
+            How many Cactaceae plants do you have?
+            <figure class="figure">
+              <img src="./src/img/cataceae.png" alt="Icon of Cactaceae" class="figure__img">
+            </figure>
+          </label>
+          <input type="number" id="input_number_cactaceae" class="input" min=0 value=0>
+        </div>
+        <div class="input-wrapper">
+          <label for="input_number_pinaceae" class="label">
+            How many Piaceae plants do you have?
+            <figure class="figure">
+              <img src="./src/img/pinaceae.png" alt="Icon of Cactaceae" class="figure__img">
+            </figure>
+          </label>
+          <input type="number" id="input_number_pinaceae" class="input" min=0 value=0>
+        </div>
+        <div class="input-wrapper">
+          <label for="input_number_liliaceae" class="label">
+            How many Liliaceae plants do you have?
+            <figure class="figure">
+              <img src="./src/img/liliceae.png" alt="Icon of Cactaceae" class="figure__img">
+            </figure>
+          </label>
+          <input type="number" id="input_number_liliaceae" class="input" min=0 value=0>
+        </div>
+        <div class="input-wrapper">
+          <label for="input_next_step" class="label">
+            Now, we can do the next step to calculate the growth of your plants.
+          </label>
+          <input type="button" id="input_next_step" class="input" value="Next Step">
+        </div>
+      </div>
     </section>
     <section class="section section--results">
 
