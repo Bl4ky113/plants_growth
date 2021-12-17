@@ -13,8 +13,6 @@
   grid-template-areas: "header header header"
                        "main   main   main  "
                        "footer footer footer";
-
-  overflow-x: hidden;
 }
 
 .header {
@@ -174,36 +172,6 @@
     }
   }
 
-  .section--popup {
-    width: 100vw;
-    height: 100vh;
-    
-    margin: 0;
-    padding: 0;
-    
-    position: absolute;
-    z-index: 1;
-    
-    overflow: hidden;
-
-    .popup-wrapper {
-      width: 100vw;
-      height: 100vh;
-      
-      background-color: $light_black;
-      
-      opacity: 0.75;
-      
-      position: sticky;
-      top: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-flow: row wrap;
-    }
-  }
-
   .section--form {
     border-radius: 0.5rem;
 
@@ -287,9 +255,150 @@
       &[type="number"]::-webkit-inner-spin-button {
         opacity: 1;
       }
-      
     }
   }
+
+  .section--popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  
+    background-color: rgba($color: #2b2b2b, $alpha: 0.9);
+  
+    display: none;
+    grid-template: auto auto / 10% 1fr 10%;
+    grid-template-areas: "popup     popup     popup    "
+                         "animation animation animation";
+    justify-items: center;
+    align-items: flex-start;
+
+    .popup {
+      width: 90%;
+      min-height: 60vh;
+
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+
+      position: -webkit-sticky;
+      position: sticky;
+      top: 1rem;
+
+      background-color: $light_cold_green;
+
+      grid-area: popup;
+
+      display: grid;
+      grid-template: auto 1fr / 1fr auto;
+      grid-template-areas: "title   closebtn"
+                           "content content ";
+      gap: 0.5rem;
+
+      .popup__title {
+        border-bottom: 3px solid $dark_green;
+
+        color: $font_black;
+        font: 700 1.25rem/115% "Open Sans Condensed", sans-serif;
+        text-align: center;
+        text-transform: capitalize;
+
+        grid-area: title;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .popup__closebtn {
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+
+        background-color: $dark_green;
+
+        grid-area: closebtn;
+
+        &:before {
+          content: "\f00d";
+          color: $light_cold_green;
+          font: 500 1rem/100% "FontAwesome";
+          text-align: center;
+        }
+      }
+
+      .content-wrapper {
+        border-left: 3px solid $dark_green;
+        border-right: 3px solid $dark_green;
+        padding: 0.5rem;
+
+        grid-area: content;
+      }
+
+      .popup__text {
+        margin: 0.25rem 0;
+
+        color: $font_black;
+        font: 600 1rem/110% "Open Sans", sans-serif;
+      }
+
+      .input-wrapper {
+        margin: 1.5rem 0;
+        border-top: 2px solid $dark_green;
+        border-bottom: 2px solid $dark_green;
+        padding: 0.5rem 0;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+      }
+
+      .popup__label {
+        color: $font_black;
+        font: 600 1rem/110% "Open Sans", sans-serif;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      .popup__input {
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.75rem 1rem;
+  
+        color: $font_black;
+        font: 700 1rem/110% "Open Sans Condensed", sans-serif;
+        text-align: center;
+        text-transform: capitalize;
+  
+        transition: outline 400ms ease;
+  
+        &:hover,
+        &:focus,
+        &:target {
+          outline: 3px solid $dark_green;
+        }
+
+        &[type="number"]::-webkit-inner-spin-button {
+          opacity: 1;
+        }
+      }
+    }
+
+    .animation {
+      width: 90%;
+      height: 30vh;
+
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 1rem;
+
+      background-color: $base_green;
+
+      grid-area: animation;
+    }
+  }
+
+  .section--popup-show { display: grid; }  
 }
 
 .footer {
